@@ -6,6 +6,7 @@ const clubAddress = 'Al-Madrasatul Ittifaqiyah, Jalan Keramat Hujung, Kampung Da
 const mapsQuery = encodeURIComponent(clubAddress);
 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
 const mapsEmbedUrl = `https://maps.google.com/maps?q=${mapsQuery}&hl=en&z=15&output=embed`;
+const web3formsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
 ---
 
 <Layout title="Contact | BELIAPRO" description="Get in touch with Kelab Belia Progresif Datuk Keramat — join our youth programmes or enquire about membership." image="/images/contact.png">
@@ -151,16 +152,22 @@ const mapsEmbedUrl = `https://maps.google.com/maps?q=${mapsQuery}&hl=en&z=15&out
   </main>
 </Layout>
 
-<script>
+<script define:vars={{ web3formsKey }}>
   function initContactForm() {
-    const form = document.getElementById('contact-form') as HTMLFormElement | null;
+    const form = document.getElementById('contact-form');
     const status = document.getElementById('form-status');
-    const submitBtn = document.getElementById('contact-submit') as HTMLButtonElement | null;
+    const submitBtn = document.getElementById('contact-submit');
 
     if (!form || !status || !submitBtn) return;
 
-    const onSubmit = async (event: Event) => {
+    const onSubmit = async (event) => {
       event.preventDefault();
+
+      if (!web3formsKey) {
+        status.textContent = 'Contact form is not configured yet. Please try again later.';
+        status.className = 'font-body-md text-center min-h-[1.5rem] text-red-400';
+        return;
+      }
 
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending...';
@@ -168,19 +175,14 @@ const mapsEmbedUrl = `https://maps.google.com/maps?q=${mapsQuery}&hl=en&z=15&out
       status.className = 'font-body-md text-center min-h-[1.5rem]';
 
       const formData = new FormData(form);
-      const payload = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        inquiry: formData.get('inquiry'),
-        message: formData.get('message'),
-        botcheck: formData.get('botcheck') ? true : false,
-      };
+      formData.append('access_key', web3formsKey);
+      formData.append('subject', `BELIAPRO Enquiry: ${formData.get('inquiry')}`);
+      formData.append('from_name', String(formData.get('name') ?? 'BELIAPRO Website'));
 
       try {
-        const response = await fetch('/api/contact', {
+        const response = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify(payload),
+          body: formData,
         });
         const result = await response.json();
 
@@ -193,7 +195,7 @@ const mapsEmbedUrl = `https://maps.google.com/maps?q=${mapsQuery}&hl=en&z=15&out
           status.className = 'font-body-md text-center min-h-[1.5rem] text-red-400';
         }
       } catch {
-        status.textContent = 'Network error. Please try again or email beliaprokeramat@gmail.com.';
+        status.textContent = 'Network error. Please try again later.';
         status.className = 'font-body-md text-center min-h-[1.5rem] text-red-400';
       } finally {
         submitBtn.disabled = false;
