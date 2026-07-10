@@ -15,6 +15,12 @@ const web3formsAccessKey =
   process.env.WEB3FORMS_ACCESS_KEY ||
   '';
 
+if (!web3formsAccessKey && process.env.VERCEL) {
+  throw new Error(
+    'Contact form requires WEB3FORMS_ACCESS_KEY or PUBLIC_WEB3FORMS_ACCESS_KEY in Vercel environment variables (Production + Preview).'
+  );
+}
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://beliapro.com',
