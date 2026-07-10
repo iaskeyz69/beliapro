@@ -8,7 +8,7 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
 const mapsEmbedUrl = `https://maps.google.com/maps?q=${mapsQuery}&hl=en&z=15&output=embed`;
 const web3formsKey =
   import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ||
-  process.env.WEB3FORMS_ACCESS_KEY ||
+  import.meta.env.WEB3FORMS_ACCESS_KEY ||
   '';
 ---
 
