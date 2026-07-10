@@ -1,0 +1,219 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Reveal from '../components/Reveal.astro';
+
+const members = [
+  {
+    name: 'Harith Imran',
+    title: 'President',
+    image: encodeURI('/images/Harith Imran - President .jpg'),
+  },
+  {
+    name: 'Hafizuddin',
+    title: 'Vice President',
+    image: encodeURI('/images/Hafizuddin - Vice President.jpg'),
+  },
+  {
+    name: 'Julias Johari',
+    title: '2nd Vice President',
+    image: encodeURI('/images/Julias Johari - 2nd Vice President .PNG'),
+  },
+  {
+    name: 'Amal',
+    title: 'Treasurer & Secretary',
+    image: encodeURI('/images/Amal  - treasurer & Secretary .png'),
+  },
+  {
+    name: 'Hazim Mus',
+    title: 'Committee Member',
+    image: encodeURI('/images/Hazim Mus - committee member .jpeg'),
+  },
+];
+
+const objectives = [
+  {
+    icon: 'workspace_premium',
+    title: 'Building Character',
+    description: 'Developing integrity, discipline, and positive values in every young member of our club.',
+  },
+  {
+    icon: 'flag',
+    title: 'National Loyalty',
+    description: 'Fostering love for the nation and a deep commitment to Malaysia\'s progress and unity.',
+  },
+  {
+    icon: 'account_balance',
+    title: 'Rukun Negara',
+    description: 'Upholding the five national principles as our guide for harmony, unity, and social responsibility.',
+  },
+];
+
+const rukunNegara = [
+  { number: '01', title: 'Kepercayaan kepada Tuhan', titleEn: 'Belief in God' },
+  { number: '02', title: 'Kesetiaan kepada Raja dan Negara', titleEn: 'Loyalty to King and Country' },
+  { number: '03', title: 'Keluhuran Perlembagaan', titleEn: 'Supremacy of the Constitution' },
+  { number: '04', title: 'Kedaulatan Undang-undang', titleEn: 'Rule of Law' },
+  { number: '05', title: 'Kesopanan dan Kesusilaan', titleEn: 'Courtesy and Morality' },
+];
+
+const coreObjectives = [
+  { icon: 'campaign', text: 'Raising awareness regarding negative values and influences among youth.' },
+  { icon: 'groups', text: 'Promoting youth involvement in culture, environment, sports, health, spirituality, and social welfare.' },
+  { icon: 'location_city', text: 'Providing opportunities for community development programmes in both urban and rural areas.' },
+  { icon: 'school', text: 'Offering training in leadership, skills, and entrepreneurship.' },
+  { icon: 'self_improvement', text: 'Helping youth develop positive attitudes to face life\'s challenges through education and life skills.' },
+];
+---
+
+<Layout title="About Us | BELIAPRO" description="Kelab Belia Progresif Datuk Keramat — building youth character, national loyalty, and empowering young people in Kuala Lumpur." image="/images/about.png">
+  <main>
+    <section class="min-h-[70vh] md:min-h-screen flex flex-col items-center justify-center pt-32 px-margin-mobile text-center">
+      <Reveal>
+        <span class="font-label-caps text-label-caps text-primary-container mb-6 block">ABOUT BELIAPRO</span>
+        <h1 class="text-display-responsive text-white max-w-4xl mx-auto">Our Story.</h1>
+        <p class="font-body-lg text-secondary max-w-3xl mx-auto mt-8">
+          Kelab Belia Progresif Datuk Keramat, also known by its abbreviation <strong class="text-white">BELIAPRO</strong>, is a Malaysian youth organization based in Kuala Lumpur dedicated to the development and empowerment of young people.
+        </p>
+      </Reveal>
+      <Reveal delay={200} class="mt-section-gap w-full max-w-7xl mx-auto rounded-[20px] overflow-hidden border border-white/10 aspect-video relative">
+        <img
+          class="w-full h-full object-cover brightness-90"
+          alt="BELIAPRO youth community in Kuala Lumpur"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt-3Ppm0TTSDfyzMu9f_r_vkjPGpLl3e5xYbibO_epGf11qUizlqYLPFCC5J9CqNTZYGManipS9eiWUlf65YGvlLGkqk0lDAcz4NA-APbVxwB0-my3-wlO_tJ2UMSyqF_wWxkIqKLw9YvkYMJxy_2XMlTF8ZS6UGD9RKU3f_dvS97fJ-j1PcKQyNrFU3zmfPQwc4x9gGqw130v33dBgxjzdqSB-gJbremRBYhPJVIJK4stRJ-_z0EDZcQrV2an9An7dik20_qEo3yr"
+        />
+      </Reveal>
+    </section>
+
+    <section class="py-section-gap px-margin-mobile">
+      <Reveal>
+        <div class="max-w-4xl mx-auto text-center space-y-stack-lg">
+          <h2 class="text-headline-responsive text-white">Our Mission.</h2>
+          <p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto">
+            The primary mission of BELIAPRO is to build youth character and increase national loyalty
+            through the principles of Rukun Negara. We are committed to guiding young people toward
+            becoming responsible, progressive citizens who contribute to their communities and nation.
+          </p>
+          <div class="pt-stack-lg">
+            <div class="h-px w-24 bg-primary-container mx-auto"></div>
+          </div>
+        </div>
+      </Reveal>
+    </section>
+
+    <section class="py-section-gap px-8 bg-surface-container-lowest">
+      <div class="max-w-7xl mx-auto">
+        <Reveal>
+          <div class="flex flex-col md:flex-row justify-between items-end mb-stack-lg gap-gutter">
+            <h2 class="text-headline-responsive text-white">Our Foundation.</h2>
+            <p class="font-body-md text-body-md text-secondary max-w-md">
+              Three pillars that guide every programme, activity, and decision within our organization.
+            </p>
+          </div>
+        </Reveal>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mt-stack-lg">
+          {
+            objectives.map((item, i) => (
+              <Reveal delay={i * 100}>
+                <div class="bg-[#1A1A1A] p-10 rounded-[20px] border border-white/10 hover:border-primary-container/30 transition-all duration-500 group h-full">
+                  <span class="material-symbols-outlined text-primary-container mb-stack-md text-4xl">{item.icon}</span>
+                  <h3 class="text-headline-md-responsive text-white mb-4">{item.title}</h3>
+                  <p class="font-body-md text-body-md text-secondary-container">{item.description}</p>
+                </div>
+              </Reveal>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="py-section-gap px-8">
+      <Reveal>
+        <div class="max-w-4xl mx-auto mb-section-gap text-center">
+          <span class="font-label-caps text-primary-container tracking-[0.2em] mb-4 block">RUKUN NEGARA</span>
+          <h2 class="text-headline-responsive text-white mb-6">The Five Principles.</h2>
+          <p class="font-body-lg text-secondary">
+            BELIAPRO upholds Rukun Negara as the foundation of our youth development philosophy.
+          </p>
+        </div>
+      </Reveal>
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          rukunNegara.map((item, i) => (
+            <Reveal delay={i * 80}>
+              <div class="glass-card p-8 rounded-[20px] hover:border-primary-container/30 transition-colors h-full">
+                <span class="font-display-responsive text-primary-container/30 text-4xl block mb-4">{item.number}</span>
+                <h3 class="font-headline-md text-white mb-2">{item.title}</h3>
+                <p class="font-body-md text-secondary">{item.titleEn}</p>
+              </div>
+            </Reveal>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="py-section-gap px-8 bg-surface-container-lowest">
+      <Reveal>
+        <div class="max-w-4xl mx-auto mb-section-gap text-center">
+          <h2 class="text-headline-responsive text-white mb-6">Core Objectives.</h2>
+          <p class="font-body-lg text-secondary">
+            As outlined in our constitution, BELIAPRO pursues the following goals for the benefit of Malaysian youth:
+          </p>
+        </div>
+      </Reveal>
+      <div class="max-w-5xl mx-auto space-y-6">
+        {
+          coreObjectives.map((item, i) => (
+            <Reveal delay={i * 80}>
+              <div class="glass-card p-8 rounded-[20px] flex gap-6 items-start hover:border-primary-container/30 transition-colors">
+                <span class="material-symbols-outlined text-primary-container text-3xl shrink-0">{item.icon}</span>
+                <p class="font-body-lg text-secondary">{item.text}</p>
+              </div>
+            </Reveal>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="py-section-gap px-8">
+      <Reveal>
+        <h2 class="text-headline-responsive text-white mb-section-gap text-center">Executive Committee.</h2>
+      </Reveal>
+      <div class="flex flex-wrap justify-center gap-x-12 gap-y-16 max-w-6xl mx-auto">
+        {
+          members.map((member, i) => (
+            <Reveal delay={i * 100} class="group w-full max-w-[280px]">
+              <div class="aspect-[4/5] overflow-hidden rounded-[20px] border border-white/10 mb-stack-md relative bg-surface-container">
+                <img
+                  class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  alt={`${member.name}, ${member.title}`}
+                  src={member.image}
+                />
+              </div>
+              <div class="text-center">
+                <h4 class="text-headline-md-responsive text-white">{member.name}</h4>
+                <p class="font-label-caps text-label-caps text-primary-container uppercase">{member.title}</p>
+              </div>
+            </Reveal>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="py-section-gap px-8 text-center bg-primary-container">
+      <Reveal>
+        <div class="max-w-4xl mx-auto py-24">
+          <h2 class="text-headline-responsive text-on-primary mb-stack-lg">Join BELIAPRO.</h2>
+          <p class="font-body-lg text-body-lg text-on-primary/80 mb-stack-lg max-w-xl mx-auto">
+            Be part of a youth organization that builds character, strengthens community, and shapes a progressive Malaysia.
+          </p>
+          <a
+            href="/contact"
+            class="inline-block bg-black text-white px-12 py-4 rounded-full font-bold text-lg hover:scale-105 active:scale-95 transition-all shadow-2xl"
+          >
+            Register Your Interest
+          </a>
+        </div>
+      </Reveal>
+    </section>
+  </main>
+</Layout>

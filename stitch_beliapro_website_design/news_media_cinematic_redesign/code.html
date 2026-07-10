@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#353535",
+                    "secondary-container": "#454747",
+                    "secondary": "#c6c6c7",
+                    "on-error-container": "#ffdad6",
+                    "tertiary": "#f8f4f4",
+                    "surface-bright": "#393939",
+                    "surface-dim": "#131313",
+                    "primary": "#fff5dc",
+                    "on-tertiary-container": "#5f5e5e",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "primary-fixed": "#ffe170",
+                    "error-container": "#93000a",
+                    "outline-variant": "#4d4632",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "surface-tint": "#e9c400",
+                    "on-secondary-container": "#b4b5b5",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-primary-fixed": "#221b00",
+                    "outline": "#999077",
+                    "surface": "#131313",
+                    "on-surface-variant": "#d0c6ab",
+                    "inverse-on-surface": "#303030",
+                    "on-primary-container": "#705d00",
+                    "on-tertiary": "#313030",
+                    "on-primary-fixed-variant": "#544600",
+                    "surface-container-high": "#2a2a2a",
+                    "background": "#131313",
+                    "primary-container": "#ffd600",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-container-highest": "#353535",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed": "#e5e2e1",
+                    "surface-container": "#1f1f1f",
+                    "tertiary-container": "#dbd8d8",
+                    "on-primary": "#3a3000",
+                    "on-secondary": "#2f3131",
+                    "on-secondary-fixed-variant": "#454747",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "primary-fixed-dim": "#e9c400",
+                    "on-surface": "#e2e2e2",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "inverse-primary": "#705d00",
+                    "on-error": "#690005",
+                    "inverse-surface": "#e2e2e2",
+                    "on-background": "#e2e2e2",
+                    "surface-container-low": "#1b1b1b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "16px",
+                    "stack-lg": "40px",
+                    "margin-mobile": "24px",
+                    "stack-sm": "8px",
+                    "gutter": "32px",
+                    "section-gap": "160px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "display-xl": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "160%", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                    "body-md": ["16px", {"lineHeight": "150%", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "100%", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "display-xl": ["120px", {"lineHeight": "110%", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "headline-lg": ["64px", {"lineHeight": "115%", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "120%", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { background-color: #131313; }
+        .glass-card {
+            background: #1A1A1A;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-black/60 backdrop-blur-3xl border-b border-white/10 font-['Plus_Jakarta_Sans'] font-medium tracking-tight">
+<div class="flex justify-between items-center px-8 h-16 max-w-screen-2xl mx-auto">
+<div class="text-xl font-bold tracking-tighter text-white">BeliaPro</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-white/60 hover:text-white transition-colors duration-300" href="#">Product</a>
+<a class="text-white/60 hover:text-white transition-colors duration-300" href="#">Features</a>
+<a class="text-white/60 hover:text-white transition-colors duration-300" href="#">Vision</a>
+<a class="text-white/60 hover:text-white transition-colors duration-300" href="#">Support</a>
+</div>
+<button class="bg-primary-container text-on-primary px-6 py-2 rounded-full font-semibold scale-95 active:scale-90 transition-transform">
+                Get Started
+            </button>
+</div>
+</nav>
+<main class="pt-32 pb-section-gap px-margin-mobile md:px-8 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<header class="mb-20 text-center md:text-left">
+<p class="font-label-caps text-label-caps text-primary-container mb-4 uppercase">News &amp; Insights</p>
+<h1 class="font-display-xl text-headline-lg md:text-display-xl text-white tracking-tighter leading-none">
+                Official Transmissions.
+            </h1>
+</header>
+<!-- Featured Article -->
+<section class="mb-section-gap">
+<div class="relative group cursor-pointer overflow-hidden rounded-[40px] glass-card aspect-[16/9] md:aspect-[21/9]">
+<img alt="Featured Article" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="A cinematic, wide-angle shot of a futuristic laboratory interior at dusk. High-contrast lighting highlights sleek metallic surfaces and glowing yellow interface screens. In the center, a sophisticated bionic prototype stands under a soft spotlight, surrounded by minimal glass architecture. The atmosphere is quiet, exclusive, and technologically advanced, rendered in deep blacks and electric yellow accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClc84Pu1JQUWGv8aDO9uzkCqjfbliRHGFh3AkI9qp3qdrMBmiK7xfujkzqiPHVbdnukLe9v9KpTvNANpCTGaNjvf8j-CzxnZ6cumX4tmaXygyeJ4B8pPlLll_C-tQABFxXsfxbcP7A8IacNwQdh6PSxJvDpLgWGlqtimQF7-4xqpuqIgWwJJC4v8GbXxm6rL45yv8eudT4iwedxjURVloIMWzTDu4yG_rR6OwZqdAHV_xh6vlcsHjPnhT3IV5kr5oT-EkU5DDJZZUi"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 md:p-16 max-w-3xl">
+<div class="flex items-center gap-3 mb-6">
+<span class="bg-primary-container/10 text-primary-container px-3 py-1 rounded-full font-label-caps text-xs">FEATURED</span>
+<span class="text-white/40 font-label-caps text-xs uppercase tracking-widest">March 24, 2024</span>
+</div>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg text-white mb-6 leading-tight">
+                        Redefining the Human Potential: The Genesis of BeliaPro.
+                    </h2>
+<p class="font-body-lg text-white/60 line-clamp-2 md:line-clamp-none max-w-2xl">
+                        An exclusive look into the engineering philosophy that drives our pursuit of uncompromising physical and digital integration.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Editorial Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-24 gap-x-12">
+<!-- Update Card 1 -->
+<article class="flex flex-col group">
+<div class="relative aspect-square overflow-hidden rounded-[32px] glass-card mb-8">
+<img alt="Update 1" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" data-alt="A close-up, macro shot of advanced fiber-optic materials glowing with a soft yellow light against a dark, textured background. The lighting is dramatic and cinematic, highlighting the intricate mesh patterns. The aesthetic is extremely minimalist and premium, focusing on the craftsmanship of high-end technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoaiU1-N6FbUD4v0EfxuPQjoWg-C0KYYEp-J0j1hK3mfsefZohg2Fl0PZ9xHI7uUKV8Jt_s8R_pdQLtjlIgaxBFP_ibYvUVhWdiHfbCFDsv9zu_UHjqiQKxyL21vQC9F6QGtoeV5KvydNFvDGcbs_LP1ZuHq0Wx1BrssCRKt1RbpdcbplzmmtFYUKdt90QeD1mTsy2vCPwzw2DKW7Ou1uEdoLGhRd48MlPky4uCF7quka7PxFQh2MgA2IYmWQQ_ZFnsOiskbCJ45a9"/>
+</div>
+<div class="space-y-4">
+<span class="text-white/40 font-label-caps text-xs uppercase tracking-widest">Technology / Mar 18</span>
+<h3 class="font-headline-md text-white group-hover:text-primary-container transition-colors">Neural Synchronization Protocols.</h3>
+<p class="font-body-md text-white/60">Exploring the latest breakthroughs in low-latency haptic feedback loops for precision control.</p>
+</div>
+</article>
+<!-- Update Card 2 -->
+<article class="flex flex-col group">
+<div class="relative aspect-square overflow-hidden rounded-[32px] glass-card mb-8">
+<img alt="Update 2" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" data-alt="An ultra-modern urban cityscape at night, viewed from a high-altitude balcony. The architecture features clean lines and glass surfaces reflecting the yellow glow of distant city lights. The atmosphere is serene and exclusive, with a cool dark grey and black palette punctuated by amber tones. High-contrast and cinematic composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmNES7FRUdZ0X9zyZ02r-tmQ7T4_CARIoTPt-iovFWa84MzLob5ocP_mOZU7jlEEQ6bD88leSBT-WSklEH_7kaZoqozY0xHNvAZul2141Wpvko1du18TxwxoISYq_IsyQU5XrEtsMBmVDi9l_JTAbgebIz9E-p7GkMfFGTdJvymmYWpIMnHzG2fw2GwtVBjlq9gcggFhAD0KfXOMfmP1i2ivzWgg9cBog6Kpv9omY__LoqCKquzqiT1f8uLw2OHq_WtzWTn-H6PVOf"/>
+</div>
+<div class="space-y-4">
+<span class="text-white/40 font-label-caps text-xs uppercase tracking-widest">Corporate / Mar 12</span>
+<h3 class="font-headline-md text-white group-hover:text-primary-container transition-colors">Global Headquarters Expansion.</h3>
+<p class="font-body-md text-white/60">Establishing a new standard for collaborative innovation centers in the heart of the digital district.</p>
+</div>
+</article>
+<!-- Update Card 3 -->
+<article class="flex flex-col group">
+<div class="relative aspect-square overflow-hidden rounded-[32px] glass-card mb-8">
+<img alt="Update 3" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" data-alt="Minimalist abstract portrait of a person wearing sleek, futuristic eyewear. The lighting is sharp and high-contrast, casting deep shadows across the face while highlighting the metallic rim of the glasses in electric yellow. The background is a flat, deep black, creating a sense of intense focus and exclusivity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8kJ-PSCk0qXzj9I0aycx8YtzN180z-kSYAl5-AkcVbR2gz3sWSaGC-eFL8-nzcXLg5YbxWdOW2x48SRJEyBL2MZvligMVro1ekLDnlBsqaYkMxCuwnQJ0XA1OwpUDNsEon_8KjmOOMZeCIal0GAabsu6BMyMaNv-wMYMEDpB7gmbTXqu4njF7Of7N2DPxCTpYm7MmzM4ZLIoor1_cOsMhevFMk3H4Ss_MqTtjErEZqxV7R5umnBIi_vL9bJqBOIbL_7NbjYdCW2-P"/>
+</div>
+<div class="space-y-4">
+<span class="text-white/40 font-label-caps text-xs uppercase tracking-widest">Vision / Mar 05</span>
+<h3 class="font-headline-md text-white group-hover:text-primary-container transition-colors">The Aesthetic of Precision.</h3>
+<p class="font-body-md text-white/60">A deep dive into the industrial design language of the BeliaPro ecosystem and its cultural impact.</p>
+</div>
+</article>
+<!-- Update Card 4 -->
+<article class="flex flex-col group">
+<div class="relative aspect-square overflow-hidden rounded-[32px] glass-card mb-8">
+<img alt="Update 4" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" data-alt="Interior of a luxury automotive cockpit at night. Minimalist controls glow with yellow accents against dark leather and carbon fiber textures. The scene is shot with a shallow depth of field, focusing on the tactile quality of the materials. The mood is sophisticated, moody, and uncompromisingly premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxX9INe4JvUhjA1lXkr2CKvqtpc4Y6uaxyEukJLNwsG15UPfFDq9nIs-TVmdY2knZGfqR2Vu_Yhq7giShXB22LKKm24qRWXD2JYq2Qp_Im5D2ChAzBS4godovXAhzCIXJkh53uaeQm8YDOdMtT3eRziXTn__cXj2ddFQHOmc2WmMiMuS7A0VFBGgsQnSg6cN67WlAgmWvdxXQ_QFGjFQwsBjyZA8aKCbRqHUIwdtKATxuOv_uIJolEIVp3AG3XjjxU9kaTlRx9E0al"/>
+</div>
+<div class="space-y-4">
+<span class="text-white/40 font-label-caps text-xs uppercase tracking-widest">Product / Feb 28</span>
+<h3 class="font-headline-md text-white group-hover:text-primary-container transition-colors">Interfacing with the Future.</h3>
+<p class="font-body-md text-white/60">How BeliaPro is integrating with high-performance mobile ecosystems for seamless control.</p>
+</div>
+</article>
+<!-- Update Card 5 -->
+<article class="flex flex-col group">
+<div class="relative aspect-square overflow-hidden rounded-[32px] glass-card mb-8">
+<img alt="Update 5" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" data-alt="A large, empty art gallery space with white walls and a polished black floor. A single minimalist yellow sculpture stands in the center, bathed in a dramatic beam of white light from above. The composition emphasizes negative space and high-contrast boldness, conveying a sense of quiet power and artistic intention." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2ww2qgdgvwPeGNKNk1vyn9dO7kiBuHdGclo0_FrkGpRHxbrhb7Uoz64wB-g9aBiG8jSlxxfnyjS4lHlAW1qCfiLXP2QpLKeamGAfbX2PsbhuYr9lEzqGXz0eDAvFmaq6VnBpYFPm7SJuhkbvMnYuq12qU8iTkTFaT5bLQLYQ6JjepmmSGF7gXFf6hb6-j6xyUJrX9xJs4IWqjLfUSDk_uEfCd3v_vihyBmItUrFdfUKoPFYVn_d7ePq5RvzEWDSPsGE-TbHe0ANRj"/>
+</div>
+<div class="space-y-4">
+<span class="text-white/40 font-label-caps text-xs uppercase tracking-widest">Culture / Feb 22</span>
+<h3 class="font-headline-md text-white group-hover:text-primary-container transition-colors">The Gallery of Intent.</h3>
+<p class="font-body-md text-white/60">Exploring the intersection of technological utility and fine art in the modern era.</p>
+</div>
+</article>
+<!-- Update Card 6 -->
+<article class="flex flex-col group">
+<div class="relative aspect-square overflow-hidden rounded-[32px] glass-card mb-8">
+<img alt="Update 6" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" data-alt="Close-up shot of a high-end watch movement, showcasing the intricate gears and springs. The metal is polished to a mirror finish, reflecting soft white and yellow highlights. The image is clean, sharp, and focused on the precision of mechanical engineering. Dark, moody background provides extreme contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlpCf0TZtxV6-et1Q2OY7Anktz-ymF30AR7KKz33yrAmiAj5g3U3pAQPZlBttuzfMiyfk-VZ7WFdkJfngWeSuTKMwem1AJAOT8yWe9kYOhEwcHPi5cZxoo1UmV7g5_iep8PpU5ntU8iFafj2YhhXU0eun7WzbFL92bIi9sQ6XFBOPLvXUjUETmcH4qMWweOHAhkJk9b4L0HKHkOkAr1_zvTKn1m2Z9vTD_3JHOwE5HDSURrZb8rWc3v6WlR_zVqc9_rEdKxRPjl2jw"/>
+</div>
+<div class="space-y-4">
+<span class="text-white/40 font-label-caps text-xs uppercase tracking-widest">Engineering / Feb 15</span>
+<h3 class="font-headline-md text-white group-hover:text-primary-container transition-colors">0.001mm Tolerance.</h3>
+<p class="font-body-md text-white/60">A technical whitepaper on our manufacturing precision and the pursuit of perfect assembly.</p>
+</div>
+</article>
+</section>
+<!-- Load More -->
+<div class="mt-section-gap flex justify-center">
+<button class="border border-white/20 text-white px-12 py-4 rounded-full font-label-caps tracking-widest uppercase hover:bg-white hover:text-black transition-all duration-300">
+                View Archive
+            </button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 px-8 bg-black border-t border-white/10 font-['Plus_Jakarta_Sans'] text-sm uppercase tracking-widest">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12 max-w-7xl mx-auto">
+<div class="space-y-6">
+<div class="text-lg font-black text-white">BeliaPro</div>
+<p class="text-white/40 lowercase tracking-normal max-w-xs font-body-md">Architecting the future of human-machine interaction through uncompromising design.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+<div class="flex flex-col gap-4">
+<span class="text-white font-semibold mb-2">Legal</span>
+<a class="text-white/40 hover:text-yellow-400 transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-white/40 hover:text-yellow-400 transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-white font-semibold mb-2">System</span>
+<a class="text-white/40 hover:text-yellow-400 transition-colors opacity-80 hover:opacity-100" href="#">Cookie Settings</a>
+<a class="text-white/40 hover:text-yellow-400 transition-colors opacity-80 hover:opacity-100" href="#">Contact</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-white/20 tracking-tighter">© 2024 BeliaPro. All rights reserved.</p>
+<div class="flex gap-8">
+<span class="material-symbols-outlined text-white/40 hover:text-primary-container cursor-pointer transition-colors" data-icon="share">share</span>
+<span class="material-symbols-outlined text-white/40 hover:text-primary-container cursor-pointer transition-colors" data-icon="language">language</span>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,90 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+}
+---
+
+<Layout
+  title={`${post.data.title} | BeliaPro`}
+  description={post.data.excerpt}
+  image={post.data.image}
+>
+  <main class="pt-32 pb-section-gap">
+    <article class="max-w-4xl mx-auto px-margin-mobile md:px-8">
+      <header class="mb-16">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="bg-primary-container/10 text-primary-container px-3 py-1 rounded-full font-label-caps text-xs uppercase">
+            {post.data.category}
+          </span>
+          <span class="text-white/40 font-label-caps text-xs uppercase tracking-widest">
+            {formatDate(post.data.date)}
+          </span>
+        </div>
+        <h1 class="font-headline-lg text-white mb-8 leading-tight">{post.data.title}</h1>
+        <p class="font-body-lg text-secondary">{post.data.excerpt}</p>
+      </header>
+
+      <div class="relative overflow-hidden rounded-[40px] glass-card aspect-[16/9] mb-16">
+        <img
+          class="w-full h-full object-cover"
+          alt={post.data.title}
+          src={post.data.image}
+        />
+      </div>
+
+      <div class="prose prose-invert prose-lg max-w-none
+        prose-headings:font-headline-md prose-headings:text-white
+        prose-p:font-body-lg prose-p:text-secondary prose-p:leading-relaxed
+        prose-a:text-primary-container prose-a:no-underline hover:prose-a:underline
+        prose-strong:text-white
+        prose-h2:mt-12 prose-h2:mb-6">
+        <Content />
+      </div>
+
+      <div class="mt-section-gap pt-12 border-t border-white/10">
+        <a
+          href="/news"
+          class="inline-flex items-center gap-2 text-white font-bold group hover:text-primary-container transition-colors"
+        >
+          <span class="material-symbols-outlined group-hover:-translate-x-2 transition-transform">arrow_back</span>
+          Back to News & Media
+        </a>
+      </div>
+    </article>
+  </main>
+</Layout>
+
+<style>
+  :global(.prose h2) {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  :global(.prose p) {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 160%;
+    color: #c6c6c7;
+    margin-bottom: 1.5rem;
+  }
+  :global(.prose a) {
+    color: #ffd600;
+    font-weight: 600;
+  }
+</style>

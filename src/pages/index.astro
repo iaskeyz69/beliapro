@@ -1,0 +1,203 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Reveal from '../components/Reveal.astro';
+
+const objectives = [
+  {
+    icon: 'psychology',
+    title: 'Character & Awareness',
+    description: 'Raising awareness regarding negative values and influences among Malaysian youth.',
+  },
+  {
+    icon: 'diversity_3',
+    title: 'Youth Involvement',
+    description: 'Promoting active participation in culture, environment, sports, health, spirituality, and social welfare.',
+  },
+  {
+    icon: 'location_city',
+    title: 'Community Development',
+    description: 'Providing opportunities for community programmes in both urban and rural areas.',
+  },
+  {
+    icon: 'school',
+    title: 'Skills & Leadership',
+    description: 'Offering training in leadership, skills, and entrepreneurship for young people.',
+  },
+  {
+    icon: 'self_improvement',
+    title: 'Life Skills & Education',
+    description: 'Helping youth develop positive attitudes to face life\'s challenges through education and life skills.',
+  },
+];
+
+const stats = [
+  { value: '5', label: 'Executive Committee' },
+  { value: '6', label: 'Programme Areas' },
+  { value: '1', label: 'Mission: Rukun Negara' },
+];
+---
+
+<Layout title="BELIAPRO | Kelab Belia Progresif Datuk Keramat" image="/images/home.png">
+  <main>
+    <section
+      class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-32 pb-section-gap overflow-hidden"
+    >
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-bg__orb hero-bg__orb--yellow"></div>
+        <div class="hero-bg__orb hero-bg__orb--warm"></div>
+        <div class="hero-bg__orb hero-bg__orb--cool"></div>
+        <div class="hero-bg__grid"></div>
+        <div class="hero-bg__line"></div>
+        <div class="hero-bg__vignette"></div>
+      </div>
+      <div class="relative z-10 max-w-5xl mx-auto">
+        <span class="hero-fade font-label-caps text-label-caps text-primary-container uppercase mb-6 block tracking-[0.4em]"
+          >Kelab Belia Progresif Datuk Keramat</span
+        >
+        <p class="hero-fade hero-fade-delay-1 font-body-lg text-secondary/70 mb-4 italic">
+          Membina Generasi Muda Berintegriti
+        </p>
+        <h1 class="hero-fade hero-fade-delay-2 text-display-responsive text-white mb-8 tracking-tighter leading-none text-glow">
+          Empowering Malaysian Youth.
+        </h1>
+        <p class="hero-fade hero-fade-delay-3 font-body-lg text-body-lg text-secondary max-w-2xl mx-auto mb-12 opacity-80">
+          BELIAPRO is a Malaysian youth organization based in Kuala Lumpur, dedicated to the development
+          and empowerment of young people through character building, national loyalty, and the principles
+          of Rukun Negara.
+        </p>
+        <div class="hero-fade hero-fade-delay-4 flex flex-col sm:flex-row items-center justify-center gap-6">
+          <a
+            href="/contact"
+            class="bg-primary-container text-on-primary-container px-10 py-5 rounded-full font-bold text-lg hover:brightness-110 transition-all scale-100 active:scale-95"
+          >
+            Join BELIAPRO
+          </a>
+          <a
+            href="/about"
+            class="border border-white/20 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/10 transition-all scale-100 active:scale-95 flex items-center gap-2"
+          >
+            <span class="material-symbols-outlined text-xl">info</span>
+            Learn About Us
+          </a>
+        </div>
+      </div>
+      <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-40 z-10">
+        <span class="font-label-caps text-[10px] tracking-widest uppercase">Scroll to Discover</span>
+        <div class="scroll-line w-[1px] h-16 bg-gradient-to-b from-white to-transparent"></div>
+      </div>
+    </section>
+
+    <section class="min-h-[70vh] md:min-h-screen flex items-center justify-center py-section-gap px-8">
+      <div class="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <Reveal class="order-2 lg:order-1">
+          <div class="glass-card rounded-[20px] overflow-hidden aspect-[4/5] relative group">
+            <img
+              class="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+              alt="Malaysian youth leaders in Kuala Lumpur"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWzT-jUWf0Xqfzr25nFSQuLdOy67HclfJSxdpVLXlLMckNGXRN5gfggsF0mVQ17g710fpXH5Hq8e7uR8l1zxZaC8_HLuqEYUHaRljMMRULEb0Evd-3aOZRB2B_QRrjtb9W9Lw2SJLiBM-D1LDgjR5vkP7iAZywclzxn6NYjtcNSph8Acm0M1yjoel0eMRqt_PVZs4ZpzFZz9nWzakCaw2baeNS50MK4S9VBIzr3J6xBUXIa0LtFwHAonOKT-PMbEPH1atO288V68KQ"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+            <div class="absolute bottom-8 left-8">
+              <p class="font-label-caps text-white/60 mb-2">OUR MISSION</p>
+              <h3 class="text-headline-md-responsive text-white">Building Tomorrow's Leaders</h3>
+            </div>
+          </div>
+        </Reveal>
+        <Reveal delay={150} class="order-1 lg:order-2 space-y-8">
+          <span class="font-label-caps text-primary-container tracking-[0.2em]">WHO WE ARE</span>
+          <h2 class="text-headline-responsive text-white leading-tight">A Club for Progressive Youth.</h2>
+          <p class="font-body-lg text-secondary">
+            Kelab Belia Progresif Datuk Keramat, known as BELIAPRO, is committed to building youth
+            character and increasing national loyalty. We guide young people to become responsible,
+            capable citizens who contribute positively to their communities and nation.
+          </p>
+          <div class="pt-8">
+            <a class="inline-flex items-center gap-2 text-white font-bold group" href="/about">
+              Our story & objectives
+              <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+
+    <section class="min-h-[70vh] md:min-h-screen flex items-center justify-center py-section-gap px-8 bg-surface-container-lowest">
+      <div class="max-w-7xl w-full">
+        <Reveal>
+          <div class="text-center mb-24">
+            <span class="font-label-caps text-primary-container tracking-[0.2em] mb-4 block"
+              >CORE OBJECTIVES</span
+            >
+            <h2 class="text-headline-responsive text-white">What We Stand For.</h2>
+            <p class="font-body-lg text-secondary max-w-2xl mx-auto mt-6">
+              Our mission is rooted in the principles of Rukun Negara — guiding youth toward character,
+              community, and national progress.
+            </p>
+          </div>
+        </Reveal>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {
+            objectives.map((item, i) => (
+              <Reveal delay={i * 100}>
+                <div class="glass-card p-10 rounded-[20px] flex flex-col gap-6 group hover:border-primary-container/50 transition-colors h-full">
+                  <span class="material-symbols-outlined text-primary-container text-4xl">{item.icon}</span>
+                  <div>
+                    <h3 class="text-headline-md-responsive text-white mb-3">{item.title}</h3>
+                    <p class="font-body-md text-secondary">{item.description}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="py-section-gap px-8 bg-black">
+      <div class="max-w-5xl mx-auto">
+        <Reveal>
+          <div class="text-center mb-16">
+            <span class="font-label-caps text-primary-container tracking-[0.2em] mb-4 block">AT A GLANCE</span>
+            <h2 class="text-headline-responsive text-white">BELIAPRO in Numbers.</h2>
+          </div>
+        </Reveal>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {
+            stats.map((stat, i) => (
+              <Reveal delay={i * 120}>
+                <div class="glass-card p-10 rounded-[20px] text-center hover:border-primary-container/50 transition-colors">
+                  <span class="text-display-responsive text-primary-container block mb-2">{stat.value}</span>
+                  <span class="font-label-caps text-secondary uppercase tracking-widest">{stat.label}</span>
+                </div>
+              </Reveal>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="py-section-gap px-8 text-center relative overflow-hidden">
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-container/5 blur-[120px] rounded-full"
+      >
+      </div>
+      <Reveal>
+        <div class="max-w-4xl mx-auto relative z-10">
+          <h2 class="text-headline-responsive text-white mb-8">Ready to make a difference?</h2>
+          <p class="font-body-lg text-secondary mb-12 max-w-xl mx-auto">
+            Join BELIAPRO and be part of a community that develops leadership, skills, and positive values
+            for a better Malaysia.
+          </p>
+          <a
+            href="/contact"
+            class="inline-block bg-white text-black px-12 py-6 rounded-full font-black text-xl hover:bg-primary-container transition-all"
+          >
+            Become a Member
+          </a>
+        </div>
+      </Reveal>
+    </section>
+  </main>
+</Layout>

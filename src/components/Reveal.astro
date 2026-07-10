@@ -1,0 +1,44 @@
+---
+interface Props {
+  delay?: number;
+  class?: string;
+}
+
+const { delay = 0, class: className = '' } = Astro.props;
+---
+
+<div class:list={['reveal', className]} data-delay={delay}>
+  <slot />
+</div>
+
+<script>
+  function initReveal() {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const elements = document.querySelectorAll('.reveal');
+
+    if (prefersReduced) {
+      elements.forEach((el) => el.classList.add('revealed'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target as HTMLElement;
+            const delay = el.dataset.delay || '0';
+            el.style.transitionDelay = `${delay}ms`;
+            el.classList.add('revealed');
+            observer.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -48px 0px' }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+  }
+
+  initReveal();
+  document.addEventListener('astro:page-load', initReveal);
+</script>

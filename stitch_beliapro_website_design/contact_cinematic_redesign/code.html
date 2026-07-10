@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#353535",
+                    "secondary-container": "#454747",
+                    "secondary": "#c6c6c7",
+                    "on-error-container": "#ffdad6",
+                    "tertiary": "#f8f4f4",
+                    "surface-bright": "#393939",
+                    "surface-dim": "#131313",
+                    "primary": "#fff5dc",
+                    "on-tertiary-container": "#5f5e5e",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "primary-fixed": "#ffe170",
+                    "error-container": "#93000a",
+                    "outline-variant": "#4d4632",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "surface-tint": "#e9c400",
+                    "on-secondary-container": "#b4b5b5",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-primary-fixed": "#221b00",
+                    "outline": "#999077",
+                    "surface": "#131313",
+                    "on-surface-variant": "#d0c6ab",
+                    "inverse-on-surface": "#303030",
+                    "on-primary-container": "#705d00",
+                    "on-tertiary": "#313030",
+                    "on-primary-fixed-variant": "#544600",
+                    "surface-container-high": "#2a2a2a",
+                    "background": "#131313",
+                    "primary-container": "#ffd600",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-container-highest": "#353535",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed": "#e5e2e1",
+                    "surface-container": "#1f1f1f",
+                    "tertiary-container": "#dbd8d8",
+                    "on-primary": "#3a3000",
+                    "on-secondary": "#2f3131",
+                    "on-secondary-fixed-variant": "#454747",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "primary-fixed-dim": "#e9c400",
+                    "on-surface": "#e2e2e2",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "inverse-primary": "#705d00",
+                    "on-error": "#690005",
+                    "inverse-surface": "#e2e2e2",
+                    "on-background": "#e2e2e2",
+                    "surface-container-low": "#1b1b1b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "16px",
+                    "stack-lg": "40px",
+                    "margin-mobile": "24px",
+                    "stack-sm": "8px",
+                    "gutter": "32px",
+                    "section-gap": "160px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "display-xl": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "160%", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                    "body-md": ["16px", {"lineHeight": "150%", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "100%", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "display-xl": ["120px", {"lineHeight": "110%", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "headline-lg": ["64px", {"lineHeight": "115%", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "120%", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #000000;
+            color: #e2e2e2;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(26, 26, 26, 0.4);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-black/60 backdrop-blur-3xl border-b border-white/10 h-16">
+<div class="flex justify-between items-center px-8 h-full max-w-screen-2xl mx-auto font-['Plus_Jakarta_Sans'] font-medium tracking-tight">
+<div class="text-xl font-bold tracking-tighter text-white">BeliaPro</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-white/60 hover:text-white transition-colors duration-300" href="#">Product</a>
+<a class="text-white/60 hover:text-white transition-colors duration-300" href="#">Features</a>
+<a class="text-white/60 hover:text-white transition-colors duration-300" href="#">Vision</a>
+<a class="text-white font-semibold transition-colors duration-300" href="#">Support</a>
+</div>
+<button class="bg-primary-container text-on-primary px-6 py-2 rounded-full font-semibold scale-95 active:scale-90 transition-transform">
+                Get Started
+            </button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col items-center justify-center pt-16 px-margin-mobile">
+<div class="text-center max-w-4xl">
+<span class="font-label-caps text-label-caps text-primary-container mb-stack-md block">CONNECT</span>
+<h1 class="font-display-xl text-display-xl text-white mb-stack-lg leading-none">Initiate Contact.</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto">
+                    Experience unparalleled precision. Reach out to the architects of the next-generation ecosystem.
+                </p>
+</div>
+<div class="mt-section-gap w-full flex justify-center">
+<span class="material-symbols-outlined text-white/20 text-5xl animate-bounce">expand_more</span>
+</div>
+</section>
+<!-- Contact Form Section -->
+<section class="min-h-screen flex items-center justify-center py-section-gap px-margin-mobile bg-surface-container-lowest">
+<div class="w-full max-w-2xl">
+<div class="glass-card p-12 rounded-[40px]">
+<form class="space-y-stack-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg">
+<div class="space-y-stack-sm">
+<label class="font-label-caps text-label-caps text-secondary ml-4">GIVEN NAME</label>
+<input class="w-full bg-surface-container border border-white/5 rounded-xl px-6 py-4 focus:border-primary-container focus:ring-0 transition-all outline-none text-white font-body-md" placeholder="John" type="text"/>
+</div>
+<div class="space-y-stack-sm">
+<label class="font-label-caps text-label-caps text-secondary ml-4">DIGITAL ADDRESS</label>
+<input class="w-full bg-surface-container border border-white/5 rounded-xl px-6 py-4 focus:border-primary-container focus:ring-0 transition-all outline-none text-white font-body-md" placeholder="john@company.com" type="email"/>
+</div>
+</div>
+<div class="space-y-stack-sm">
+<label class="font-label-caps text-label-caps text-secondary ml-4">INQUIRY TYPE</label>
+<select class="w-full bg-surface-container border border-white/5 rounded-xl px-6 py-4 focus:border-primary-container focus:ring-0 transition-all outline-none text-white font-body-md appearance-none">
+<option>Executive Partnership</option>
+<option>Technical Support</option>
+<option>Media Inquiry</option>
+</select>
+</div>
+<div class="space-y-stack-sm">
+<label class="font-label-caps text-label-caps text-secondary ml-4">DISPATCH MESSAGE</label>
+<textarea class="w-full bg-surface-container border border-white/5 rounded-xl px-6 py-4 focus:border-primary-container focus:ring-0 transition-all outline-none text-white font-body-md resize-none" placeholder="Your message..." rows="5"></textarea>
+</div>
+<button class="w-full bg-primary-container text-on-primary py-5 rounded-full font-headline-md text-body-md uppercase tracking-widest font-bold hover:brightness-110 active:scale-[0.98] transition-all" type="submit">
+                            Send Dispatch
+                        </button>
+</form>
+</div>
+</div>
+</section>
+<!-- Information Section -->
+<section class="min-h-screen flex items-center justify-center py-section-gap px-margin-mobile">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter max-w-7xl w-full">
+<div class="relative overflow-hidden rounded-[40px] aspect-square md:aspect-video glass-card">
+<img class="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000" data-alt="A cinematic low-angle architectural shot of the TRX Exchange 106 skyscraper in Kuala Lumpur during blue hour. The building's geometric glass facade reflects a deep indigo sky, punctuated by sharp, clean structural lines and a minimalist urban environment. The atmosphere is sophisticated, modern, and high-contrast, perfectly aligning with the dark luxury brand aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArcuchIhOwGc94nm2_1r_h0zVRfiraxikMb4d5hvzXYM_jVysvbvEwqgckKIA9uS7pz8uNR4lIlljszHJMHFDBsLJg_15MKHixRNfT-3XYSsFCxwV2s11WIYJAA8J54wNRMqRK1BtPQHD4wSid5YyUlBsnaMPWF_eCcTKoPQeUj9GrP9nRUYlg0M2Ilv45qCvSL0i0TKnzRYZa7iMtyHjj6V2KJ7724JONrUmg1B5HG4vpgFRs3AOsW2kG7GXXk8JklyBkve8mL0XO"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+<div class="absolute bottom-10 left-10">
+<span class="font-label-caps text-label-caps text-primary-container block mb-2">LOCATION</span>
+<h3 class="font-headline-md text-headline-md text-white">TRX, Kuala Lumpur</h3>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-stack-lg pl-0 md:pl-12">
+<div class="space-y-stack-sm">
+<span class="font-label-caps text-label-caps text-secondary">HEADQUARTERS</span>
+<p class="font-headline-md text-headline-md text-white leading-tight">
+                            Level 45, Menara TRX<br/>
+                            Persiaran TRX, 55188<br/>
+                            Kuala Lumpur, Malaysia
+                        </p>
+</div>
+<div class="h-px w-24 bg-white/10"></div>
+<div class="flex flex-col gap-stack-md">
+<span class="font-label-caps text-label-caps text-secondary">SOCIAL CHANNELS</span>
+<div class="flex flex-wrap gap-8">
+<a class="font-body-lg text-body-lg text-white hover:text-primary-container transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">alternate_email</span> Instagram
+                            </a>
+<a class="font-body-lg text-body-lg text-white hover:text-primary-container transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">terminal</span> X.com
+                            </a>
+<a class="font-body-lg text-body-lg text-white hover:text-primary-container transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">work</span> LinkedIn
+                            </a>
+</div>
+</div>
+<div class="pt-stack-lg">
+<a class="inline-flex items-center gap-stack-sm font-headline-md text-white hover:text-primary-container transition-colors group" href="mailto:contact@beliapro.com">
+                            contact@beliapro.com
+                            <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-black w-full py-20 px-8 border-t border-white/10">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12 max-w-7xl mx-auto font-['Plus_Jakarta_Sans'] text-sm uppercase tracking-widest">
+<div class="space-y-6">
+<div class="text-lg font-black text-white">BeliaPro</div>
+<div class="text-white/40">© 2024 BeliaPro. All rights reserved.</div>
+</div>
+<div class="grid grid-cols-2 md:flex gap-12">
+<div class="flex flex-col gap-4">
+<a class="text-white/40 hover:text-yellow-400 transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-white/40 hover:text-yellow-400 transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-white/40 hover:text-yellow-400 transition-colors opacity-80 hover:opacity-100" href="#">Cookie Settings</a>
+<a class="text-white/40 hover:text-yellow-400 transition-colors opacity-80 hover:opacity-100" href="#">Contact</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

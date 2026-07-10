@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#353535",
+                    "secondary-container": "#454747",
+                    "secondary": "#c6c6c7",
+                    "on-error-container": "#ffdad6",
+                    "tertiary": "#f8f4f4",
+                    "surface-bright": "#393939",
+                    "surface-dim": "#131313",
+                    "primary": "#fff5dc",
+                    "on-tertiary-container": "#5f5e5e",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "primary-fixed": "#ffe170",
+                    "error-container": "#93000a",
+                    "outline-variant": "#4d4632",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "surface-tint": "#e9c400",
+                    "on-secondary-container": "#b4b5b5",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-primary-fixed": "#221b00",
+                    "outline": "#999077",
+                    "surface": "#131313",
+                    "on-surface-variant": "#d0c6ab",
+                    "inverse-on-surface": "#303030",
+                    "on-primary-container": "#705d00",
+                    "on-tertiary": "#313030",
+                    "on-primary-fixed-variant": "#544600",
+                    "surface-container-high": "#2a2a2a",
+                    "background": "#131313",
+                    "primary-container": "#ffd600",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-container-highest": "#353535",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed": "#e5e2e1",
+                    "surface-container": "#1f1f1f",
+                    "tertiary-container": "#dbd8d8",
+                    "on-primary": "#3a3000",
+                    "on-secondary": "#2f3131",
+                    "on-secondary-fixed-variant": "#454747",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "primary-fixed-dim": "#e9c400",
+                    "on-surface": "#e2e2e2",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "inverse-primary": "#705d00",
+                    "on-error": "#690005",
+                    "inverse-surface": "#e2e2e2",
+                    "on-background": "#e2e2e2",
+                    "surface-container-low": "#1b1b1b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "16px",
+                    "stack-lg": "40px",
+                    "margin-mobile": "24px",
+                    "stack-sm": "8px",
+                    "gutter": "32px",
+                    "section-gap": "160px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "display-xl": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "160%", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                    "body-md": ["16px", {"lineHeight": "150%", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "100%", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "display-xl": ["120px", {"lineHeight": "110%", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "headline-lg": ["64px", {"lineHeight": "115%", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "120%", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body class="bg-black text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-black/60 backdrop-blur-3xl border-b border-white/10">
+<div class="flex justify-between items-center px-8 h-16 max-w-screen-2xl mx-auto">
+<div class="text-xl font-bold tracking-tighter text-white font-['Plus_Jakarta_Sans']">BeliaPro</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-white font-semibold font-['Plus_Jakarta_Sans'] text-sm transition-colors duration-300" href="#">Product</a>
+<a class="text-white/60 hover:text-white font-medium font-['Plus_Jakarta_Sans'] text-sm transition-colors duration-300" href="#">Features</a>
+<a class="text-white/60 hover:text-white font-medium font-['Plus_Jakarta_Sans'] text-sm transition-colors duration-300" href="#">Vision</a>
+<a class="text-white/60 hover:text-white font-medium font-['Plus_Jakarta_Sans'] text-sm transition-colors duration-300" href="#">Support</a>
+</div>
+<button class="bg-primary-container text-on-primary px-6 py-2 rounded-full font-label-caps uppercase tracking-widest text-[10px] scale-95 active:scale-90 transition-transform">
+                Get Started
+            </button>
+</div>
+</nav>
+<main class="pt-32 pb-section-gap">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-8 mb-24">
+<div class="inline-block bg-surface-container-high px-4 py-1.5 rounded-full mb-6">
+<span class="font-label-caps text-primary-container uppercase">Elite Selection 2024</span>
+</div>
+<h1 class="font-display-xl text-white leading-none mb-8 max-w-4xl">
+                The Vanguard Projects.
+            </h1>
+<p class="font-body-lg text-secondary max-w-2xl">
+                An curated ecosystem of high-impact initiatives designed for those who command the future. Each program is a surgical intervention in excellence.
+            </p>
+</section>
+<!-- Category Filter -->
+<section class="max-w-7xl mx-auto px-8 mb-16">
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-3 rounded-full bg-primary-container text-on-primary font-label-caps uppercase">All Projects</button>
+<button class="px-8 py-3 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-variant transition-colors font-label-caps uppercase">Culture</button>
+<button class="px-8 py-3 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-variant transition-colors font-label-caps uppercase">Sports</button>
+<button class="px-8 py-3 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-variant transition-colors font-label-caps uppercase">Leadership</button>
+</div>
+</section>
+<!-- Asymmetric Bento Grid -->
+<section class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Large Feature Card -->
+<div class="md:col-span-8 group relative overflow-hidden bg-[#1A1A1A] rounded-[40px] p-12 border border-white/10 flex flex-col justify-between min-h-[600px]">
+<div class="absolute inset-0 z-0 opacity-40 group-hover:opacity-60 transition-opacity duration-700">
+<img class="w-full h-full object-cover" data-alt="A cinematic, high-contrast photograph of a sleek, dark architectural space with glowing golden neon accents. The lighting is moody and atmospheric, emphasizing sharp lines and premium materials. The overall aesthetic is ultra-modern, sophisticated, and aligns with a luxury technology brand using a black and electric yellow palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA32IouwmNg2inbdwcDDZvB4_a7a4UWF3JmQIAAuV5QJUMTKyGqZoIM9sKeNAxA6el0G15gwmPtFJhxu3AxAf-Di9-q9rUzLfqTRBNmcDcKZpM-QxKdmOs_vZODT7Lkq_AFNCvxH3rpWJ2zck-w3tz3j6jKddBJCrD293Bew3EIZfPcf7oEbYACVwhWJAJPExRXY-0K5q7Gm3vdwo-wpHmk4QIpNzX9cwB3IXlnqFhpjHIGrC7Pg1fkNMAWMvVBYZ9pbFLVBaAm1fxj"/>
+</div>
+<div class="relative z-10">
+<span class="font-label-caps text-primary-container mb-4 block">LEADERSHIP</span>
+<h3 class="font-headline-lg text-white mb-4">Apex Executive<br/>Initiative</h3>
+<p class="font-body-md text-secondary max-w-md">The definitive program for future architects of global industries. High-stakes mentorship and strategic networking.</p>
+</div>
+<div class="relative z-10 mt-auto flex items-center justify-between">
+<div class="flex -space-x-4">
+<div class="w-12 h-12 rounded-full border-2 border-[#1A1A1A] bg-surface-variant overflow-hidden">
+<img data-alt="A professional portrait of a senior executive in a minimalist studio setting with moody, low-key lighting that emphasizes texture and depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCuFHzuD4ujUmUtkDGGQ9uvRZPJrxFCAzfLEcvkIAqvnCXdzCHM0tEvHkWRZlM-_FtyREOD-ISAG7jnN07lBovxRtMZbvdgqn0A298eQkI0wc-dKC_12Lty4RXigfpiuER4-ok1xq2V3Q6Mm3V-xTockVQX3cbhybHBAqZ4jNN68kFAi5AdqfM2qxVKBMu0Ar4fyfzfSlvLlBA5fKTWBwmoCH5vVKkqvPMqOljawVzL2oSlrLLEFIDRe4fY4KndSEdpoN_lOE3Q5w0"/>
+</div>
+<div class="w-12 h-12 rounded-full border-2 border-[#1A1A1A] bg-surface-variant overflow-hidden flex items-center justify-center text-[10px] font-bold text-white">+12</div>
+</div>
+<button class="bg-primary-container text-on-primary px-10 py-4 rounded-full font-label-caps uppercase hover:scale-105 transition-transform">Apply Now</button>
+</div>
+</div>
+<!-- Secondary Tall Card -->
+<div class="md:col-span-4 bg-[#1A1A1A] rounded-[40px] p-10 border border-white/10 flex flex-col justify-between min-h-[600px]">
+<div>
+<span class="font-label-caps text-secondary mb-4 block">CULTURE</span>
+<h3 class="font-headline-md text-white mb-6">Metropolitan Art Guild</h3>
+<p class="font-body-md text-secondary mb-8">Access to clandestine gallery openings and private auctions across the world's fashion capitals.</p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary-container">check_circle</span>
+<span class="font-body-md">VIP Access</span>
+</li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary-container">check_circle</span>
+<span class="font-body-md">Private Concierge</span>
+</li>
+</ul>
+</div>
+<div class="pt-8 border-t border-white/5">
+<button class="w-full bg-white/5 text-white border border-white/10 px-6 py-4 rounded-full font-label-caps uppercase hover:bg-white/10 transition-colors">Apply</button>
+</div>
+</div>
+<!-- Square Card -->
+<div class="md:col-span-4 bg-[#1A1A1A] rounded-[40px] p-10 border border-white/10 flex flex-col h-[480px]">
+<div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-on-primary text-3xl" data-weight="fill">sports_tennis</span>
+</div>
+<span class="font-label-caps text-secondary mb-2 block">SPORTS</span>
+<h3 class="font-headline-md text-white mb-4">Elite Tennis Club</h3>
+<p class="font-body-md text-secondary mb-8">High-performance training at world-class facilities with championship-level coaching.</p>
+<div class="mt-auto">
+<button class="w-full bg-white/5 text-white border border-white/10 px-6 py-4 rounded-full font-label-caps uppercase hover:bg-white/10 transition-colors">Apply</button>
+</div>
+</div>
+<!-- Wide Horizontal Card -->
+<div class="md:col-span-8 group relative overflow-hidden bg-[#1A1A1A] rounded-[40px] p-10 border border-white/10 flex items-center h-[480px]">
+<div class="absolute right-0 top-0 h-full w-1/2 opacity-20 group-hover:opacity-30 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="A professional group meeting in a high-end, minimalist boardroom with massive glass windows overlooking a dark, urban cityscape at night. The lighting is sharp, cool-toned, and sophisticated, reflecting a premier business environment with a dark grey and yellow atmospheric palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA4jvxi0Agf8w_LK8YRELtTzcR-MRa7N2MMVGdK3BXUVwQVO3LlC51rl5F1JPTuGiVW1RUv2ZPjl7f71g3q5PaF0XaedAH02EUI5K4H3E9_WvdUIRdZ1afpKNcC8WJtIxCYLggqnie47uoS9YcCOzO-qGvNlmfo8WUrLghBrAIFCCyENL0Jw2aquqP-0eaAHZvznSIU2Zr-Ohiuc38L6lT7LDBhUIwV6q57B9SYR2WZ2AaZRQ8CsWYbqzV6fJrAneG9eLIfALeRHRe"/>
+</div>
+<div class="relative z-10 w-full md:w-1/2">
+<span class="font-label-caps text-primary-container mb-4 block">LEADERSHIP</span>
+<h3 class="font-headline-md text-white mb-6">Boardroom Dynamics</h3>
+<p class="font-body-md text-secondary mb-8">Mastering the art of high-stakes negotiation and corporate governance in a shifting global landscape.</p>
+<button class="bg-primary-container text-on-primary px-8 py-3 rounded-full font-label-caps uppercase">Apply</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Dynamic CTA -->
+<section class="max-w-7xl mx-auto px-8 mt-section-gap">
+<div class="bg-primary-container rounded-[40px] p-16 md:p-24 text-center">
+<h2 class="font-headline-lg text-on-primary mb-8">Don't Just Participate.<br/>Lead the Change.</h2>
+<p class="font-body-lg text-on-primary/80 max-w-2xl mx-auto mb-12">Applications for the Autumn cohort are now open. Secure your place in the Vanguard.</p>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-black text-white px-12 py-5 rounded-full font-label-caps uppercase tracking-widest hover:scale-105 transition-transform">Inquire Now</button>
+<button class="border-2 border-black/20 text-on-primary px-12 py-5 rounded-full font-label-caps uppercase tracking-widest hover:bg-black/5 transition-colors">Download Brochure</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-black py-20 px-8 border-t border-white/10">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12 max-w-7xl mx-auto">
+<div>
+<div class="text-lg font-black text-white font-['Plus_Jakarta_Sans'] mb-4">BeliaPro</div>
+<p class="text-white/40 max-w-xs font-body-md">Defining the standards of excellence for the next generation of global leaders.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-primary-container uppercase">Platform</span>
+<a class="text-white/40 hover:text-yellow-400 transition-colors font-label-caps uppercase text-[10px]" href="#">Projects</a>
+<a class="text-white/40 hover:text-yellow-400 transition-colors font-label-caps uppercase text-[10px]" href="#">Network</a>
+<a class="text-white/40 hover:text-yellow-400 transition-colors font-label-caps uppercase text-[10px]" href="#">Impact</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-primary-container uppercase">Company</span>
+<a class="text-white/40 hover:text-yellow-400 transition-colors font-label-caps uppercase text-[10px]" href="#">Vision</a>
+<a class="text-white/40 hover:text-yellow-400 transition-colors font-label-caps uppercase text-[10px]" href="#">Careers</a>
+<a class="text-white/40 hover:text-yellow-400 transition-colors font-label-caps uppercase text-[10px]" href="#">Press</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-primary-container uppercase">Legal</span>
+<a class="text-white/40 hover:text-yellow-400 transition-colors font-label-caps uppercase text-[10px]" href="#">Privacy Policy</a>
+<a class="text-white/40 hover:text-yellow-400 transition-colors font-label-caps uppercase text-[10px]" href="#">Terms</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-primary-container uppercase">Social</span>
+<a class="text-white/40 hover:text-yellow-400 transition-colors font-label-caps uppercase text-[10px]" href="#">Instagram</a>
+<a class="text-white/40 hover:text-yellow-400 transition-colors font-label-caps uppercase text-[10px]" href="#">LinkedIn</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="text-white/40 font-label-caps text-[10px]">© 2024 BeliaPro. All rights reserved.</span>
+<div class="flex gap-8">
+<span class="text-white/20 font-label-caps text-[10px]">COOKIE SETTINGS</span>
+<span class="text-white/20 font-label-caps text-[10px]">CONTACT</span>
+</div>
+</div>
+</footer>
+</body></html>

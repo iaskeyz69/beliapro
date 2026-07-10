@@ -1,0 +1,114 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Reveal from '../../components/Reveal.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const featuredPost = posts.find((p) => p.data.featured) ?? posts[0];
+const gridPosts = posts.filter((p) => p.id !== featuredPost?.id);
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+
+function formatShortDate(date: Date) {
+  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+}
+---
+
+<Layout
+  title="News & Media | BELIAPRO"
+  description="Latest news, updates, and activities from Kelab Belia Progresif Datuk Keramat (BELIAPRO)."
+  image="/images/news.png"
+>
+  <main class="pt-32 pb-section-gap px-margin-mobile md:px-8 max-w-7xl mx-auto">
+    <Reveal>
+      <header class="mb-20 text-center md:text-left">
+        <p class="font-label-caps text-label-caps text-primary-container mb-4 uppercase">News & Updates</p>
+        <h1 class="text-display-responsive text-white tracking-tighter leading-none">
+          BELIAPRO News.
+        </h1>
+        <p class="font-body-lg text-secondary max-w-2xl mt-6">
+          Stay updated on our programmes, community activities, and youth development initiatives across Kuala Lumpur.
+        </p>
+      </header>
+    </Reveal>
+
+    {
+      featuredPost && (
+        <Reveal>
+          <section class="mb-section-gap">
+            <a
+              href={`/news/${featuredPost.id}`}
+              class="relative group cursor-pointer overflow-hidden rounded-[40px] glass-card aspect-[16/9] md:aspect-[21/9] block hover:border-primary-container/30 transition-colors"
+            >
+              <img
+                alt={featuredPost.data.title}
+                class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700"
+                src={featuredPost.data.image}
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+              <div class="absolute bottom-0 left-0 p-8 md:p-16 max-w-3xl">
+                <div class="flex items-center gap-3 mb-6">
+                  <span class="bg-primary-container/10 text-primary-container px-3 py-1 rounded-full font-label-caps text-xs">
+                    FEATURED
+                  </span>
+                  <span class="text-white/40 font-label-caps text-xs uppercase tracking-widest">
+                    {formatDate(featuredPost.data.date)}
+                  </span>
+                </div>
+                <h2 class="text-headline-responsive text-white mb-6 leading-tight">
+                  {featuredPost.data.title}
+                </h2>
+                <p class="font-body-lg text-white/60 line-clamp-2 md:line-clamp-none max-w-2xl">
+                  {featuredPost.data.excerpt}
+                </p>
+              </div>
+            </a>
+          </section>
+        </Reveal>
+      )
+    }
+
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-24 gap-x-12">
+      {
+        gridPosts.map((post, i) => (
+          <Reveal delay={i * 80}>
+            <article class="flex flex-col group">
+              <a href={`/news/${post.id}`} class="relative aspect-square overflow-hidden rounded-[32px] glass-card mb-8 block hover:border-primary-container/30 transition-colors">
+                <img
+                  alt={post.data.title}
+                  class="w-full h-full object-cover group-hover:scale-110 transition-all duration-700"
+                  src={post.data.image}
+                />
+              </a>
+              <div class="space-y-4">
+                <span class="text-white/40 font-label-caps text-xs uppercase tracking-widest">
+                  {post.data.category} / {formatShortDate(post.data.date)}
+                </span>
+                <h3 class="text-headline-md-responsive text-white group-hover:text-primary-container transition-colors">
+                  <a href={`/news/${post.id}`}>{post.data.title}</a>
+                </h3>
+                <p class="font-body-md text-white/60">{post.data.excerpt}</p>
+              </div>
+            </article>
+          </Reveal>
+        ))
+      }
+    </section>
+
+    <Reveal>
+      <div class="mt-section-gap flex justify-center">
+        <a
+          href="/news"
+          class="border border-white/20 text-white px-12 py-4 rounded-full font-label-caps tracking-widest uppercase hover:bg-white hover:text-black transition-all duration-300"
+        >
+          View Archive
+        </a>
+      </div>
+    </Reveal>
+  </main>
+</Layout>

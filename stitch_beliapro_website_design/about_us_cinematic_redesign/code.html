@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#353535",
+                    "secondary-container": "#454747",
+                    "secondary": "#c6c6c7",
+                    "on-error-container": "#ffdad6",
+                    "tertiary": "#f8f4f4",
+                    "surface-bright": "#393939",
+                    "surface-dim": "#131313",
+                    "primary": "#fff5dc",
+                    "on-tertiary-container": "#5f5e5e",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "primary-fixed": "#ffe170",
+                    "error-container": "#93000a",
+                    "outline-variant": "#4d4632",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "surface-tint": "#e9c400",
+                    "on-secondary-container": "#b4b5b5",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-primary-fixed": "#221b00",
+                    "outline": "#999077",
+                    "surface": "#131313",
+                    "on-surface-variant": "#d0c6ab",
+                    "inverse-on-surface": "#303030",
+                    "on-primary-container": "#705d00",
+                    "on-tertiary": "#313030",
+                    "on-primary-fixed-variant": "#544600",
+                    "surface-container-high": "#2a2a2a",
+                    "background": "#131313",
+                    "primary-container": "#ffd600",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-container-highest": "#353535",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed": "#e5e2e1",
+                    "surface-container": "#1f1f1f",
+                    "tertiary-container": "#dbd8d8",
+                    "on-primary": "#3a3000",
+                    "on-secondary": "#2f3131",
+                    "on-secondary-fixed-variant": "#454747",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "primary-fixed-dim": "#e9c400",
+                    "on-surface": "#e2e2e2",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "inverse-primary": "#705d00",
+                    "on-error": "#690005",
+                    "inverse-surface": "#e2e2e2",
+                    "on-background": "#e2e2e2",
+                    "surface-container-low": "#1b1b1b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "16px",
+                    "stack-lg": "40px",
+                    "margin-mobile": "24px",
+                    "stack-sm": "8px",
+                    "gutter": "32px",
+                    "section-gap": "160px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "display-xl": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "160%", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                    "body-md": ["16px", {"lineHeight": "150%", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "100%", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "display-xl": ["120px", {"lineHeight": "110%", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "headline-lg": ["64px", {"lineHeight": "115%", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "120%", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131313;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-black/60 backdrop-blur-3xl border-b border-white/10">
+<div class="flex justify-between items-center px-8 h-16 max-w-screen-2xl mx-auto font-['Plus_Jakarta_Sans'] font-medium tracking-tight">
+<div class="text-xl font-bold tracking-tighter text-white">BeliaPro</div>
+<div class="hidden md:flex gap-8">
+<a class="text-white font-semibold hover:text-white transition-colors duration-300" href="#">Product</a>
+<a class="text-white/60 hover:text-white transition-colors duration-300" href="#">Features</a>
+<a class="text-white/60 hover:text-white transition-colors duration-300" href="#">Vision</a>
+<a class="text-white/60 hover:text-white transition-colors duration-300" href="#">Support</a>
+</div>
+<button class="bg-primary-container text-on-primary px-6 py-2 rounded-full font-semibold scale-95 active:scale-90 transition-transform">
+                Get Started
+            </button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col items-center justify-center pt-32 px-margin-mobile text-center">
+<span class="font-label-caps text-label-caps text-primary-container mb-6 block">OUR ORIGIN STORY</span>
+<h1 class="font-display-xl text-display-xl text-white max-w-4xl mx-auto">The Genesis.</h1>
+<div class="mt-section-gap w-full max-w-7xl mx-auto rounded-[20px] overflow-hidden border border-white/10 aspect-video relative">
+<img class="w-full h-full object-cover grayscale brightness-75 contrast-125" data-alt="A cinematic, high-contrast wide shot of a futuristic minimalist board room at twilight. The room features a single long black marble table reflecting the soft amber glow of sunset filtering through floor-to-ceiling windows. The aesthetic is incredibly premium and sleek, using only deep blacks and rich shadows with subtle electric yellow light accents from architectural details. The mood is authoritative, silent, and monumental." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt-3Ppm0TTSDfyzMu9f_r_vkjPGpLl3e5xYbibO_epGf11qUizlqYLPFCC5J9CqNTZYGManipS9eiWUlf65YGvlLGkqk0lDAcz4NA-APbVxwB0-my3-wlO_tJ2UMSyqF_wWxkIqKLw9YvkYMJxy_2XMlTF8ZS6UGD9RKU3f_dvS97fJ-j1PcKQyNrFU3zmfPQwc4x9gGqw130v33dBgxjzdqSB-gJbremRBYhPJVIJK4stRJ-_z0EDZcQrV2an9An7dik20_qEo3yr"/>
+</div>
+</section>
+<!-- Section 1: A New Creed -->
+<section class="py-section-gap px-margin-mobile">
+<div class="max-w-4xl mx-auto text-center space-y-stack-lg">
+<h2 class="font-headline-lg text-headline-lg text-white">A New Creed.</h2>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto">
+                    Born from the intersection of tradition and progress, BeliaPro was founded to redefine the standard of excellence for the next generation of Malaysian leaders. We believe that true sophistication is the result of uncompromising discipline and a relentless pursuit of character.
+                </p>
+<div class="pt-stack-lg">
+<div class="h-px w-24 bg-primary-container mx-auto"></div>
+</div>
+</div>
+</section>
+<!-- Section 2: Our Core Values -->
+<section class="py-section-gap px-8 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-stack-lg gap-gutter">
+<h2 class="font-headline-lg text-headline-lg text-white">Our Core Values.</h2>
+<p class="font-body-md text-body-md text-secondary max-w-md">The bedrock of our philosophy, guiding every decision and every interaction within our ecosystem.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mt-stack-lg">
+<!-- Card 1 -->
+<div class="bg-[#1A1A1A] p-10 rounded-[20px] border border-white/10 hover:border-primary-container/30 transition-all duration-500 group">
+<span class="material-symbols-outlined text-primary-container mb-stack-md text-4xl">workspace_premium</span>
+<h3 class="font-headline-md text-headline-md text-white mb-4">Building Character</h3>
+<p class="font-body-md text-body-md text-secondary-container">Excellence is not an act, but a habit. We cultivate integrity through rigorous standards and unwavering focus.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-[#1A1A1A] p-10 rounded-[20px] border border-white/10 hover:border-primary-container/30 transition-all duration-500 group">
+<span class="material-symbols-outlined text-primary-container mb-stack-md text-4xl">flag</span>
+<h3 class="font-headline-md text-headline-md text-white mb-4">National Loyalty</h3>
+<p class="font-body-md text-body-md text-secondary-container">A commitment to the progress of the nation, rooted in a deep understanding of our shared heritage and future.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-[#1A1A1A] p-10 rounded-[20px] border border-white/10 hover:border-primary-container/30 transition-all duration-500 group">
+<span class="material-symbols-outlined text-primary-container mb-stack-md text-4xl">account_balance</span>
+<h3 class="font-headline-md text-headline-md text-white mb-4">Rukun Negara</h3>
+<p class="font-body-md text-body-md text-secondary-container">We uphold the national principles as the ultimate guide for unity and social harmony in every endeavor.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: The Architects -->
+<section class="py-section-gap px-8">
+<div class="max-w-7xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-white mb-section-gap text-center">The Architects.</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<!-- Architect 1 -->
+<div class="group">
+<div class="aspect-[4/5] overflow-hidden rounded-[20px] border border-white/10 mb-stack-md relative bg-surface-container">
+<img class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" data-alt="A premium black and white portrait of Syukri Azman, a young Malaysian leader with an intense and visionary expression. He is wearing a sharp, tailored black suit against a deep charcoal background. The lighting is dramatic and low-key, highlighting his profile with a sharp rim light that emphasizes precision and authority. The aesthetic is strictly minimalist and cinematic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6VJJ9oN-5GMZy5VC4UCoosVhX5kWwFPajjNHkwY9q-QOcXVNWU1iNKqnE5RY2XwbXQx1UUVF28QLOhXe1VVrj9rw_VSlvhzEgevnO76e84Jir1ePxF6F94HN5cGmu1jsaWEaY2ifqSqxHShtey5NnFJloOJ4cR_ClahzYNZqbhiZ458Zm_Ws7x0ybeob1Xrq372NW1QUcOZ_x1UTrHJeRHmKcMewdpPzC0NtBxd0yV1ggT6ZUvF_pnQB0-BX9CFcpiO4NJQdgz7Bw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="text-center md:text-left">
+<h4 class="font-headline-md text-headline-md text-white">Syukri Azman</h4>
+<p class="font-label-caps text-label-caps text-primary-container">MANAGING DIRECTOR</p>
+</div>
+</div>
+<!-- Architect 2 -->
+<div class="group md:mt-24">
+<div class="aspect-[4/5] overflow-hidden rounded-[20px] border border-white/10 mb-stack-md relative bg-surface-container">
+<img class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" data-alt="A sophisticated black and white portrait of Farah Ibrahim, a Malaysian corporate leader. She possesses an air of quiet confidence and elegance, dressed in professional minimalist attire. The background is a seamless deep black. High-contrast lighting creates a sleek, gallery-like feel, focusing on her eyes and the sharp lines of her clothing. The mood is one of exclusivity and uncompromising quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd3OE71Z6Ka4VfhT7E__YeJQq79wW947htnUkHFhVYcm2Gpqk9LKZgWnV6FyDO92WMjuKhNsxt4m-VRr0WX06Mb2BPiGRHF6lUufd9CwbQxWEzg0JEu9LFoeiEHN59X2lgyPVrolIOLzvWqcSiRRT2gYHbt-gtxf_OFUkHx0fxTasHCC2TiAYhA0xR43zPm4Hmyx9mkbhus0VXDlQjN8R00FYzzepdFhvehLvd6J5nkJPtAr7RWp6bUvPVl5aL9IpKibm_3CZr5yhM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="text-center md:text-left">
+<h4 class="font-headline-md text-headline-md text-white">Farah Ibrahim</h4>
+<p class="font-label-caps text-label-caps text-primary-container">HEAD OF STRATEGY</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-gap px-8 text-center bg-primary-container">
+<div class="max-w-4xl mx-auto py-24">
+<h2 class="font-display-xl text-headline-lg text-on-primary mb-stack-lg">Join the Elite.</h2>
+<p class="font-body-lg text-body-lg text-on-primary/80 mb-stack-lg max-w-xl mx-auto">Step into the future of leadership. Your journey towards uncompromising excellence begins here.</p>
+<button class="bg-black text-white px-12 py-4 rounded-full font-bold text-lg hover:scale-105 active:scale-95 transition-all shadow-2xl">
+                    Apply for Access
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-black w-full py-20 px-8 border-t border-white/10">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12 max-w-7xl mx-auto">
+<div class="space-y-6">
+<div class="text-lg font-black text-white">BeliaPro</div>
+<p class="text-white/40 max-w-xs font-body-md text-sm">Building the next generation of Malaysian character through uncompromising standards.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-primary-container">PRACTICE</span>
+<a class="font-['Plus_Jakarta_Sans'] text-sm uppercase tracking-widest text-white/40 hover:text-yellow-400 transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm uppercase tracking-widest text-white/40 hover:text-yellow-400 transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-primary-container">SYSTEM</span>
+<a class="font-['Plus_Jakarta_Sans'] text-sm uppercase tracking-widest text-white/40 hover:text-yellow-400 transition-colors" href="#">Cookie Settings</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm uppercase tracking-widest text-white/40 hover:text-yellow-400 transition-colors" href="#">Contact</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="font-['Plus_Jakarta_Sans'] text-sm uppercase tracking-widest text-white/40">© 2024 BeliaPro. All rights reserved.</p>
+<div class="flex gap-8">
+<span class="material-symbols-outlined text-white/40 hover:text-primary-container cursor-pointer transition-colors">brand_awareness</span>
+<span class="material-symbols-outlined text-white/40 hover:text-primary-container cursor-pointer transition-colors">public</span>
+<span class="material-symbols-outlined text-white/40 hover:text-primary-container cursor-pointer transition-colors">share</span>
+</div>
+</div>
+</footer>
+</body></html>

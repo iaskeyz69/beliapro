@@ -1,0 +1,136 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Reveal from '../components/Reveal.astro';
+---
+
+<Layout title="Contact | BELIAPRO" description="Get in touch with Kelab Belia Progresif Datuk Keramat — join our youth programmes or enquire about membership." image="/images/contact.png">
+  <main>
+    <section class="min-h-[70vh] md:min-h-screen flex flex-col items-center justify-center pt-16 px-margin-mobile">
+      <Reveal>
+        <div class="text-center max-w-4xl">
+          <span class="font-label-caps text-label-caps text-primary-container mb-stack-md block">GET IN TOUCH</span>
+          <h1 class="text-display-responsive text-white mb-stack-lg leading-none">Contact Us.</h1>
+          <p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto">
+            Interested in joining BELIAPRO or learning more about our programmes? Reach out to the
+            Executive Committee — we'd love to hear from you.
+          </p>
+        </div>
+      </Reveal>
+      <div class="mt-section-gap w-full flex justify-center">
+        <span class="material-symbols-outlined text-white/20 text-5xl animate-bounce">expand_more</span>
+      </div>
+    </section>
+
+    <section class="min-h-[70vh] md:min-h-screen flex items-center justify-center py-section-gap px-margin-mobile bg-surface-container-lowest">
+      <Reveal>
+        <div class="w-full max-w-2xl">
+          <div class="glass-card p-12 rounded-[40px]" style="backdrop-filter: blur(30px); background: rgba(26, 26, 26, 0.4);">
+            <form class="space-y-stack-lg" action="mailto:contact@beliapro.com" method="post" enctype="text/plain">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg">
+                <div class="space-y-stack-sm">
+                  <label class="font-label-caps text-label-caps text-secondary ml-4">FULL NAME</label>
+                  <input
+                    class="w-full bg-surface-container border border-white/5 rounded-xl px-6 py-4 focus:border-primary-container focus:ring-0 transition-all outline-none text-white font-body-md"
+                    placeholder="Your name"
+                    type="text"
+                    name="name"
+                    required
+                  />
+                </div>
+                <div class="space-y-stack-sm">
+                  <label class="font-label-caps text-label-caps text-secondary ml-4">EMAIL ADDRESS</label>
+                  <input
+                    class="w-full bg-surface-container border border-white/5 rounded-xl px-6 py-4 focus:border-primary-container focus:ring-0 transition-all outline-none text-white font-body-md"
+                    placeholder="you@email.com"
+                    type="email"
+                    name="email"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="space-y-stack-sm">
+                <label class="font-label-caps text-label-caps text-secondary ml-4">ENQUIRY TYPE</label>
+                <select
+                  class="w-full bg-surface-container border border-white/5 rounded-xl px-6 py-4 focus:border-primary-container focus:ring-0 transition-all outline-none text-white font-body-md appearance-none"
+                  name="inquiry"
+                >
+                  <option>Membership Application</option>
+                  <option>Programme Enquiry</option>
+                  <option>Volunteer / Partnership</option>
+                  <option>Media & Press</option>
+                  <option>General Enquiry</option>
+                </select>
+              </div>
+              <div class="space-y-stack-sm">
+                <label class="font-label-caps text-label-caps text-secondary ml-4">YOUR MESSAGE</label>
+                <textarea
+                  class="w-full bg-surface-container border border-white/5 rounded-xl px-6 py-4 focus:border-primary-container focus:ring-0 transition-all outline-none text-white font-body-md resize-none"
+                  placeholder="Tell us how we can help..."
+                  rows="5"
+                  name="message"
+                  required
+                ></textarea>
+              </div>
+              <button
+                class="w-full bg-primary-container text-on-primary py-5 rounded-full font-headline-md text-body-md uppercase tracking-widest font-bold hover:brightness-110 active:scale-[0.98] transition-all"
+                type="submit"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </Reveal>
+    </section>
+
+    <section class="min-h-[70vh] md:min-h-screen flex items-center justify-center py-section-gap px-margin-mobile">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter max-w-7xl w-full">
+        <Reveal>
+          <div class="relative overflow-hidden rounded-[40px] aspect-square md:aspect-video glass-card">
+            <img
+              class="w-full h-full object-cover opacity-80"
+              alt="Kuala Lumpur skyline"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuArcuchIhOwGc94nm2_1r_h0zVRfiraxikMb4d5hvzXYM_jVysvbvEwqgckKIA9uS7pz8uNR4lIlljszHJMHFDBsLJg_15MKHixRNfT-3XYSsFCxwV2s11WIYJAA8J54wNRMqRK1BtPQHD4wSid5YyUlBsnaMPWF_eCcTKoPQeUj9GrP9nRUYlg0M2Ilv45qCvSL0i0TKnzRYZa7iMtyHjj6V2KJ7724JONrUmg1B5HG4vpgFRs3AOsW2kG7GXXk8JklyBkve8mL0XO"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+            <div class="absolute bottom-10 left-10">
+              <span class="font-label-caps text-label-caps text-primary-container block mb-2">LOCATION</span>
+              <h3 class="text-headline-md-responsive text-white">Datuk Keramat, KL</h3>
+            </div>
+          </div>
+        </Reveal>
+        <Reveal delay={150} class="flex flex-col justify-center gap-stack-lg pl-0 md:pl-12">
+          <div class="space-y-stack-sm">
+            <span class="font-label-caps text-label-caps text-secondary">CLUB ADDRESS</span>
+            <p class="text-headline-md-responsive text-white leading-tight">
+              Kelab Belia Progresif Datuk Keramat<br />
+              Datuk Keramat<br />
+              Kuala Lumpur, Malaysia
+            </p>
+          </div>
+          <div class="h-px w-24 bg-white/10"></div>
+          <div class="flex flex-col gap-stack-md">
+            <span class="font-label-caps text-label-caps text-secondary">FOLLOW US</span>
+            <div class="flex flex-wrap gap-8">
+              <a class="font-body-lg text-body-lg text-white hover:text-primary-container transition-colors flex items-center gap-2" href="#">
+                <span class="material-symbols-outlined">alternate_email</span> Instagram
+              </a>
+              <a class="font-body-lg text-body-lg text-white hover:text-primary-container transition-colors flex items-center gap-2" href="#">
+                <span class="material-symbols-outlined">terminal</span> Facebook
+              </a>
+              <a class="font-body-lg text-body-lg text-white hover:text-primary-container transition-colors flex items-center gap-2" href="#">
+                <span class="material-symbols-outlined">work</span> TikTok
+              </a>
+            </div>
+          </div>
+          <div class="pt-stack-lg">
+            <a class="inline-flex items-center gap-stack-sm font-headline-md text-white hover:text-primary-container transition-colors group" href="mailto:contact@beliapro.com">
+              contact@beliapro.com
+              <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+            </a>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  </main>
+</Layout>
