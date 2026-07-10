@@ -6,7 +6,10 @@ const clubAddress = 'Al-Madrasatul Ittifaqiyah, Jalan Keramat Hujung, Kampung Da
 const mapsQuery = encodeURIComponent(clubAddress);
 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
 const mapsEmbedUrl = `https://maps.google.com/maps?q=${mapsQuery}&hl=en&z=15&output=embed`;
-const web3formsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
+const web3formsKey =
+  import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ||
+  process.env.WEB3FORMS_ACCESS_KEY ||
+  '';
 ---
 
 <Layout title="Contact | BELIAPRO" description="Get in touch with Kelab Belia Progresif Datuk Keramat — join our youth programmes or enquire about membership." image="/images/contact.png">
