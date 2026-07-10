@@ -4,7 +4,7 @@ date: 2026-03-24
 category: "Featured"
 excerpt: "Introducing BELIAPRO — a Malaysian youth organization in Kuala Lumpur dedicated to building character, national loyalty, and empowering young people."
 image: "https://lh3.googleusercontent.com/aida-public/AB6AXuClc84Pu1JQUWGv8aDO9uzkCqjfbliRHGFh3AkI9qp3qdrMBmiK7xfujkzqiPHVbdnukLe9v9KpTvNANpCTGaNjvf8j-CzxnZ6cumX4tmaXygyeJ4B8pPlLll_C-tQABFxXsfxbcP7A8IacNwQdh6PSxJvDpLgWGlqtimQF7-4xqpuqIgWwJJC4v8GbXxm6rL45yv8eudT4iwedxjURVloIMWzTDu4yG_rR6OwZqdAHV_xh6vlcsHjPnhT3IV5kr5oT-EkU5DDJZZUi"
-featured: true
+featured: false
 ---
 
 Kelab Belia Progresif Datuk Keramat, known by its abbreviation **BELIAPRO**, is a Malaysian youth organization based in Kuala Lumpur dedicated to the development and empowerment of young people.
