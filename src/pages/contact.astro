@@ -30,7 +30,8 @@ const mapsEmbedUrl = `https://maps.google.com/maps?q=${mapsQuery}&hl=en&z=15&out
       <Reveal>
         <div class="w-full max-w-2xl">
           <div class="glass-card p-12 rounded-[40px]" style="backdrop-filter: blur(30px); background: rgba(26, 26, 26, 0.4);">
-            <form class="space-y-stack-lg" action="mailto:beliaprokeramat@gmail.com" method="post" enctype="text/plain">
+            <form id="contact-form" class="space-y-stack-lg">
+              <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
               <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg">
                 <div class="space-y-stack-sm">
                   <label class="font-label-caps text-label-caps text-secondary ml-4">FULL NAME</label>
@@ -77,11 +78,13 @@ const mapsEmbedUrl = `https://maps.google.com/maps?q=${mapsQuery}&hl=en&z=15&out
                 ></textarea>
               </div>
               <button
-                class="w-full bg-primary-container text-on-primary py-5 rounded-full font-headline-md text-body-md uppercase tracking-widest font-bold hover:brightness-110 active:scale-[0.98] transition-all"
+                id="contact-submit"
+                class="w-full bg-primary-container text-on-primary py-5 rounded-full font-headline-md text-body-md uppercase tracking-widest font-bold hover:brightness-110 active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 type="submit"
               >
                 Send Message
               </button>
+              <p id="form-status" class="font-body-md text-center min-h-[1.5rem]" role="status" aria-live="polite"></p>
             </form>
           </div>
         </div>
@@ -147,3 +150,61 @@ const mapsEmbedUrl = `https://maps.google.com/maps?q=${mapsQuery}&hl=en&z=15&out
     </section>
   </main>
 </Layout>
+
+<script>
+  function initContactForm() {
+    const form = document.getElementById('contact-form') as HTMLFormElement | null;
+    const status = document.getElementById('form-status');
+    const submitBtn = document.getElementById('contact-submit') as HTMLButtonElement | null;
+
+    if (!form || !status || !submitBtn) return;
+
+    const onSubmit = async (event: Event) => {
+      event.preventDefault();
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      status.textContent = '';
+      status.className = 'font-body-md text-center min-h-[1.5rem]';
+
+      const formData = new FormData(form);
+      const payload = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        inquiry: formData.get('inquiry'),
+        message: formData.get('message'),
+        botcheck: formData.get('botcheck') ? true : false,
+      };
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const result = await response.json();
+
+        if (result.success) {
+          status.textContent = 'Message sent! We will get back to you soon.';
+          status.className = 'font-body-md text-center min-h-[1.5rem] text-primary-container';
+          form.reset();
+        } else {
+          status.textContent = result.message || 'Something went wrong. Please try again.';
+          status.className = 'font-body-md text-center min-h-[1.5rem] text-red-400';
+        }
+      } catch {
+        status.textContent = 'Network error. Please try again or email beliaprokeramat@gmail.com.';
+        status.className = 'font-body-md text-center min-h-[1.5rem] text-red-400';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
+    };
+
+    form.removeEventListener('submit', onSubmit);
+    form.addEventListener('submit', onSubmit);
+  }
+
+  initContactForm();
+  document.addEventListener('astro:page-load', initContactForm);
+</script>
