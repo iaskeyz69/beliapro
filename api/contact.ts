@@ -1,31 +1,45 @@
-function isAllowedRequest(req: {
-  headers: Record<string, string | string[] | undefined>;
-}): boolean {
-  const origin = req.headers.origin;
-  const referer = req.headers.referer;
-  const candidates = [origin, referer].filter((value) => typeof value === 'string') as string[];
-
-  const allowedHosts = new Set([
+function getAllowedHosts(): Set<string> {
+  const hosts = new Set([
     'beliapro.com',
     'www.beliapro.com',
+    'beliapro.vercel.app',
     'localhost:4321',
     'localhost:3000',
   ]);
 
-  if (process.env.VERCEL_URL) {
-    allowedHosts.add(process.env.VERCEL_URL);
+  for (const envVar of [
+    process.env.VERCEL_URL,
+    process.env.VERCEL_BRANCH_URL,
+    process.env.VERCEL_PROJECT_PRODUCTION_URL,
+  ]) {
+    if (envVar) hosts.add(envVar.replace(/^https?:\/\//, ''));
   }
 
-  if (candidates.length === 0) return false;
+  return hosts;
+}
 
-  return candidates.some((value) => {
+function isAllowedHost(host: string, allowedHosts: Set<string>): boolean {
+  if (allowedHosts.has(host)) return true;
+  if (host.endsWith('.vercel.app') && host.includes('beliapro')) return true;
+  return false;
+}
+
+function isAllowedRequest(req: {
+  headers: Record<string, string | string[] | undefined>;
+}): boolean {
+  const allowedHosts = getAllowedHosts();
+  const hostsToCheck: string[] = [];
+
+  for (const header of [req.headers.origin, req.headers.referer, req.headers.host]) {
+    if (typeof header !== 'string') continue;
     try {
-      const host = new URL(value).host;
-      return allowedHosts.has(host);
+      hostsToCheck.push(new URL(header).host);
     } catch {
-      return false;
+      hostsToCheck.push(header.replace(/^https?:\/\//, ''));
     }
-  });
+  }
+
+  return hostsToCheck.some((host) => isAllowedHost(host, allowedHosts));
 }
 
 export default async function handler(
